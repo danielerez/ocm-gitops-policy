@@ -2,7 +2,7 @@ apiVersion: policy.mcm.ibm.com/v1alpha1
 kind: Policy
 metadata:
   name: openshift-policy
-  namespace: demo
+  namespace: openshift-monitoring
   annotations:
     policy.mcm.ibm.com/standards: NIST
     policy.mcm.ibm.com/categories: SystemAndInformationIntegrity, RBAC
