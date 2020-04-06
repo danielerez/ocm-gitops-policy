@@ -2,7 +2,7 @@ apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementBinding
 metadata:
   name: binding
-  namespace: kubevirt
+  namespace: demo
 placementRef:
   name: placement
   kind: PlacementPolicy
