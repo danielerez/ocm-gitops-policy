@@ -11,3 +11,6 @@ subjects:
   - name: policy
     kind: Policy
     apiGroup: policy.mcm.ibm.com
+  - name: openshift-policy
+    kind: Policy
+    apiGroup: policy.mcm.ibm.com
