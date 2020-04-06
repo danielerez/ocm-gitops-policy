@@ -21,4 +21,4 @@ spec:
         metadata:
           name: cluster
         spec:
-          disableAllDefaultSources: "true"
+          disableAllDefaultSources: true
