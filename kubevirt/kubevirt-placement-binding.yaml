@@ -2,7 +2,7 @@ apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementBinding
 metadata:
   name: binding
-  namespace: demo
+  namespace: my-channel2
 placementRef:
   name: placement
   kind: PlacementPolicy
