@@ -31,5 +31,6 @@ spec:
               remoteWrite:
               - url: http://observatorium-api-gateway-observatorium.apps-crc.testing/api/v1/metrics/write
         kind: ConfigMap
-        name: cluster-monitoring-config
-        namespace: openshift-monitoring
+        metadata:
+          name: cluster-monitoring-config
+          namespace: openshift-monitoring
