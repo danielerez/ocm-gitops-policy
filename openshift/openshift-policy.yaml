@@ -1,0 +1,35 @@
+apiVersion: policy.mcm.ibm.com/v1alpha1
+kind: Policy
+metadata:
+  name: openshift-policy
+  namespace: demo
+  annotations:
+    policy.mcm.ibm.com/standards: NIST
+    policy.mcm.ibm.com/categories: SystemAndInformationIntegrity, RBAC
+    policy.mcm.ibm.com/controls: MutationAdvisor
+spec:
+  remediationAction: "enforce" # enforce or inform
+  complianceType: "musthave" # used as default, when missing in a particular sub-template
+  namespaces:
+    include: ["default"]
+    exclude: ["kube*"]
+  object-templates:
+    - complianceType: "musthave"
+      objectDefinition:
+        apiVersion: config.openshift.io/v1
+        kind: OperatorHub
+        name: cluster
+        spec:
+          disableAllDefaultSources: "true"
+    - complianceType: "musthave"
+      objectDefinition:
+        apiVersion: v1
+        data:
+          config.yaml: |
+            prometheusK8s:
+              remoteWrite:
+              - url: http://observatorium-api-gateway-observatorium.apps-crc.testing/api/v1/metrics/write
+        kind: ConfigMap
+        name: cluster-monitoring-config
+        namespace: openshift-monitoring
+ 
