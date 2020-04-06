@@ -4,7 +4,7 @@ metadata:
   name: kubevirt-sub
   namespace: kubevirt
 spec:
-  channel: kubevirt/kubevirt-channel
+  channel: demo/my-channel
   placement:
     local: true
     packageFilter:
