@@ -2,7 +2,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: placement
-  namespace: demo
+  namespace: my-channel2
 spec:
   clusterLabels:
     matchLabels:
