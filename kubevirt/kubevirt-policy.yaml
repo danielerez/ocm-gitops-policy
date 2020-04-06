@@ -2,7 +2,7 @@ apiVersion: policy.mcm.ibm.com/v1alpha1
 kind: Policy
 metadata:
   name: policy
-  namespace: default
+  namespace: kubevirt
   annotations:
     policy.mcm.ibm.com/standards: NIST
     policy.mcm.ibm.com/categories: SystemAndInformationIntegrity, RBAC
