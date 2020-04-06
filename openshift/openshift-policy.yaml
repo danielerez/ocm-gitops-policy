@@ -25,7 +25,7 @@ spec:
       objectDefinition:
         apiVersion: v1
         data:
-          config.yaml: |
+          config.yaml:
             prometheusK8s:
               remoteWrite:
               - url: http://observatorium-api-gateway-observatorium.apps-crc.testing/api/v1/metrics/write
