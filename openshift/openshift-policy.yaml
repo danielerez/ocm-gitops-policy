@@ -22,3 +22,14 @@ spec:
           name: cluster
         spec:
           disableAllDefaultSources: true
+    - complianceType: "musthave"
+      objectDefinition:
+        apiVersion: v1
+        data:
+          config.yaml: |
+            prometheusK8s:
+              remoteWrite:
+              - url: http://observatorium-api-gateway-observatorium.apps-crc.testing/api/v1/metrics/write
+        kind: ConfigMap
+        name: cluster-monitoring-config
+        namespace: openshift-monitoring
