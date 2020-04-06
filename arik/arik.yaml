@@ -1,0 +1,7 @@
+apiVersion: "stable.example.com/v1"
+kind: Arik
+metadata:
+  name: arik
+spec:
+  team: rhv
+  chars: a-r-i-k
