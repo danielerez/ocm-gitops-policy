@@ -2,7 +2,7 @@ apiVersion: policy.mcm.ibm.com/v1alpha1
 kind: Policy
 metadata:
   name: policy
-  namespace: kubevirt
+  namespace: openshift-performance-addon
   annotations:
     policy.mcm.ibm.com/standards: NIST
     policy.mcm.ibm.com/categories: SystemAndInformationIntegrity, RBAC
@@ -11,7 +11,7 @@ spec:
   remediationAction: "enforce" # enforce or inform
   complianceType: "musthave" # used as default, when missing in a particular sub-template
   namespaces:
-    include: ["default", "kubevirt"]
+    include: ["default", "openshift-performance-addon"]
     exclude: ["kube-*"]
   object-templates:
     - objectDefinition:
