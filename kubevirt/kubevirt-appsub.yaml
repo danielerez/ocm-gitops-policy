@@ -6,7 +6,9 @@ metadata:
 spec:
   channel: kubevirt/my-channel2
   placement:
-    local: true
+    placementRef:
+      name: placement
+      namespace: kubevirt
     packageFilter:
       filterRef:
         name: kubevirt
