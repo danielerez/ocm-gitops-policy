@@ -14,3 +14,6 @@ subjects:
   - name: openshift-policy
     kind: Policy
     apiGroup: policy.mcm.ibm.com
+  - name: kni-policy
+    kind: Policy
+    apiGroup: policy.mcm.ibm.com
