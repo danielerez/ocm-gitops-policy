@@ -12,7 +12,7 @@ spec:
   complianceType: "musthave" # used as default, when missing in a particular sub-template
   namespaces:
     include: ["default", "kubevirt"]
-    exclude: ["kube*"]
+    exclude: ["kubepopo*"]
   object-templates:
     - complianceType: "musthave"
       objectDefinition:
