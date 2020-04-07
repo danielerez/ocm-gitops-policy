@@ -17,3 +17,6 @@ subjects:
   - name: kni-policy
     kind: Policy
     apiGroup: policy.mcm.ibm.com
+  - name: kni-cr-policy
+    kind: Policy
+    apiGroup: policy.mcm.ibm.com
