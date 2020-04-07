@@ -1,0 +1,31 @@
+apiVersion: policy.mcm.ibm.com/v1alpha1
+kind: Policy
+metadata:
+  name: kni-cr-policy
+  namespace: openshift-performance-addon
+  annotations:
+    policy.mcm.ibm.com/standards: NIST
+    policy.mcm.ibm.com/categories: SystemAndInformationIntegrity, RBAC
+    policy.mcm.ibm.com/controls: MutationAdvisor
+spec:
+  remediationAction: "enforce" # enforce or inform
+  complianceType: "musthave" # used as default, when missing in a particular sub-template
+  namespaces:
+    include: ["default", "openshift-performance-addon", "openshift-marketplace"]
+    exclude: ["kube-*"]
+  object-templates:
+    - objectDefinition:
+        apiVersion: performance.openshift.io/v1alpha1
+        kind: PerformanceProfile
+        metadata:
+          name: performance
+        spec:
+          cpu:
+            isolated: 1-3
+            reserved: "0"
+          hugepages:
+            defaultHugepagesSize: 1G
+          numa:
+            topologyPolicy: best-effort
+          realTimeKernel:
+            enabled: true
