@@ -1,7 +1,7 @@
 apiVersion: policy.mcm.ibm.com/v1alpha1
 kind: Policy
 metadata:
-  name: policy
+  name: kni-policy
   namespace: openshift-performance-addon
   annotations:
     policy.mcm.ibm.com/standards: NIST
