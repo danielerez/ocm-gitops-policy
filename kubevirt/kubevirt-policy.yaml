@@ -11,7 +11,7 @@ spec:
   remediationAction: "enforce" # enforce or inform
   complianceType: "musthave" # used as default, when missing in a particular sub-template
   namespaces:
-    include: ["default"]
+    include: ["default", "kubevirt"]
     exclude: ["kube*"]
   object-templates:
     - complianceType: "musthave"
