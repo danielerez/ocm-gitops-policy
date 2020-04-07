@@ -11,7 +11,7 @@ spec:
   remediationAction: "enforce" # enforce or inform
   complianceType: "musthave" # used as default, when missing in a particular sub-template
   namespaces:
-    include: ["default", "openshift-performance-addon"]
+    include: ["default", "openshift-performance-addon", "openshift-marketplace"]
     exclude: ["kube-*"]
   object-templates:
     - objectDefinition:
