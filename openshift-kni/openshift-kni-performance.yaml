@@ -1,0 +1,53 @@
+apiVersion: policy.mcm.ibm.com/v1alpha1
+kind: Policy
+metadata:
+  name: policy
+  namespace: kubevirt
+  annotations:
+    policy.mcm.ibm.com/standards: NIST
+    policy.mcm.ibm.com/categories: SystemAndInformationIntegrity, RBAC
+    policy.mcm.ibm.com/controls: MutationAdvisor
+spec:
+  remediationAction: "enforce" # enforce or inform
+  complianceType: "musthave" # used as default, when missing in a particular sub-template
+  namespaces:
+    include: ["default", "kubevirt"]
+    exclude: ["kube-*"]
+  object-templates:
+    - objectDefinition:
+        apiVersion: v1
+        kind: Namespace
+        metadata:
+          labels:
+            openshift.io/cluster-monitoring: "true"
+          name: openshift-performance-addon
+        spec: {}
+    - objectDefinition:
+        apiVersion: operators.coreos.com/v1
+        kind: OperatorGroup
+        metadata:
+          name: openshift-performance-addon-operatorgroup
+          namespace: openshift-performance-addon
+        spec:
+          targetNamespaces:
+          - openshift-performance-addon
+    - objectDefinition:
+        apiVersion: operators.coreos.com/v1alpha1
+        kind: CatalogSource
+        metadata:
+          name: performance-addon-operator-catalogsource
+          namespace: openshift-marketplace
+        spec:
+          displayName: Openshift Performance Addon Operator
+          icon:
+            base64data: ""
+            mediatype: ""
+          image: quay.io/openshift-kni/performance-addon-operator-registry:latest
+          publisher: Red Hat
+          sourceType: grpc
+    - objectDefinition:
+        apiVersion: operators.coreos.com/v1alpha1
+        kind: Subscription
+        metadata:
+          name: performance-addon-operator-subscription
+          namespace: openshift-performance-addon
