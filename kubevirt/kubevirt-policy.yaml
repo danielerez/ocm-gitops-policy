@@ -690,11 +690,11 @@ spec:
               serviceAccountName: kubevirt-operator
     - complianceType: "musthave"
       objectDefinition:
-      apiVersion: kubevirt.io/v1alpha3
-      kind: KubeVirt
-      metadata:
-        name: kubevirt
-        namespace: kubevirt
-      spec:
-        imagePullPolicy: IfNotPresent
+        apiVersion: kubevirt.io/v1alpha3
+        kind: KubeVirt
+        metadata:
+          name: kubevirt
+          namespace: kubevirt
+        spec:
+          imagePullPolicy: IfNotPresent
 
