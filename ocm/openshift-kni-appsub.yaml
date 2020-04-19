@@ -2,7 +2,7 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: kubevirt-rule
+  name: kni-rule
 spec:
   clusterLabels:
     matchLabels:
@@ -12,7 +12,7 @@ spec:
 apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
-  name: kubevirt-appsub
+  name: cnv-appsub
 annotations:
   apps.open-cluster-management.io/github-path: kubevirt
   apps.open-cluster-management.io/github-branch: master
@@ -21,4 +21,18 @@ spec:
   placement:
     placementRef:
       kind: PlacementRule
-      name: kubevirt-rule
+      name: kni-rule
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: cnf-appsub
+annotations:
+  apps.open-cluster-management.io/github-path: cnf
+  apps.open-cluster-management.io/github-branch: master
+spec:
+  channel: ec/ec-channel
+  placement:
+    placementRef:
+      kind: PlacementRule
+      name: kni-rule
