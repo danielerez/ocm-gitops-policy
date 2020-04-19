@@ -13,9 +13,9 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
   name: cnv-appsub
-annotations:
-  apps.open-cluster-management.io/github-path: kubevirt
-  apps.open-cluster-management.io/github-branch: master
+  annotations:
+    apps.open-cluster-management.io/github-path: kubevirt
+    apps.open-cluster-management.io/github-branch: master
 spec:
   channel: ec/ec-channel
   placement:
@@ -27,9 +27,9 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
   name: cnf-appsub
-annotations:
-  apps.open-cluster-management.io/github-path: cnf
-  apps.open-cluster-management.io/github-branch: master
+  annotations:
+    apps.open-cluster-management.io/github-path: cnf
+    apps.open-cluster-management.io/github-branch: master
 spec:
   channel: ec/ec-channel
   placement:
