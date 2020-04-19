@@ -7,6 +7,17 @@ metadata:
   name: kubevirt
 ---
 apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: kni-rule
+  namespace: kubevirt
+spec:
+  clusterLabels:
+    matchLabels:
+      team: "443"
+  clusterReplicas: 1
+---
+apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
   name: kubevirt-appsub
