@@ -6,6 +6,8 @@ metadata:
 spec:
   channel: ec/ec-channel
   placement:
-    local: true
+    placementRef:
+      kind: PlacementRule
+      name: kubevirt-rule
   packageOverrides:
   -  packageName: kubevirt
