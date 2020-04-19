@@ -28,7 +28,7 @@ kind: Subscription
 metadata:
   name: cnf-appsub
   annotations:
-    apps.open-cluster-management.io/github-path: cnf
+    apps.open-cluster-management.io/github-path: cnf/performance
     apps.open-cluster-management.io/github-branch: master
 spec:
   channel: ec/ec-channel
