@@ -8,6 +8,7 @@ spec:
   placement:
     placementRef:
       kind: PlacementRule
-      name: kubevirt-rule
-  packageOverrides:
-  -  packageName: kubevirt
+      name: kni-rule
+  packageFilter:
+    filterRef:
+      name: kubevirt
