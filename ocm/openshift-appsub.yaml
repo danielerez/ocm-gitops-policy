@@ -1,0 +1,25 @@
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: openshift-rule
+spec:
+  clusterLabels:
+    matchLabels:
+      team: "443"
+  clusterReplicas: 1
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: openshift-appsub
+  namespace:  
+spec:
+  channel: ec/ec-channel
+  placement:
+    placementRef:
+      kind: PlacementRule
+      name: openshift-rule
+  packageFilter:
+    filterRef:
+      name: openshift
