@@ -16,7 +16,7 @@ metadata:
     apps.open-cluster-management.io/github-path: kubevirt
     apps.open-cluster-management.io/github-branch: master
 spec:
-  channel: open-cluster-management/ec-channel
+  channel: ec/ec-channel
   placement:
     placementRef:
       kind: PlacementRule
@@ -30,7 +30,7 @@ metadata:
     apps.open-cluster-management.io/github-path: cnf/performance
     apps.open-cluster-management.io/github-branch: master
 spec:
-  channel: open-cluster-management/ec-channel
+  channel: ec/ec-channel
   placement:
     placementRef:
       kind: PlacementRule
