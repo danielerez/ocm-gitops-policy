@@ -6,9 +6,8 @@ metadata:
   namespace: ec
 spec:
   clusterLabels:
-    matchExpressions:
-    - key: conf.open-cluster-management.io/monitoring
-      operator: Exists
+    matchLabels:
+      conf.open-cluster-management.io/monitoring: "yes"
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
