@@ -7,7 +7,7 @@ metadata:
 spec:
   clusterLabels:
     matchExpressions:
-      key: conf.open-cluster-management.io/monitoring
+    - key: conf.open-cluster-management.io/monitoring
       operator: Exists
 ---
 apiVersion: apps.open-cluster-management.io/v1
@@ -17,8 +17,9 @@ metadata:
   namespace: ec
 spec:
   clusterLabels:
-    matchLabels:
-      - conf.open-cluster-management.io/disconnected: "yes"
+    matchExpressions:
+    - key: conf.open-cluster-management.io/disconnected
+      operator: Exists
 ---
 apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementBinding
