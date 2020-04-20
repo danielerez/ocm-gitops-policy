@@ -6,8 +6,8 @@ metadata:
 spec:
   clusterLabels:
     matchExpressions:
-      - {key: conf.open-cluster-management.io/cnf, operator: Exists}
-  clusterReplicas: 1
+      key: conf.open-cluster-management.io/cnf
+      operator: Exists
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
