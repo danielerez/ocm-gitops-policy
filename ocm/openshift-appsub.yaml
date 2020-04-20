@@ -2,24 +2,44 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: openshift-placement
-  namespace: ec
+  name: openshift-monitoring-placement
 spec:
   clusterLabels:
-    matchLabels:
-      team: "443"
+    matchExpressions:
+      - {key: conf.open-cluster-management.io/monitoring, operator: Exists}
 ---
 apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementBinding
 metadata:
-  name: openshift-binding
-  namespace: ec
+  name: openshift-monitoring-binding
 placementRef:
-  name: openshift-placement
+  name: openshift-monitoring-placement
   kind: PlacementPolicy
   apiGroup: mcm.ibm.com
 subjects:
-  - name: openshift2-policy
+  - name: openshift-monitoring-policy
+    kind: Policy
+    apiGroup: policy.mcm.ibm.com
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: openshift-disconnected-placement
+spec:
+  clusterLabels:
+    matchExpressions:
+      - {key: conf.open-cluster-management.io/disconnected, operator: Exists}
+---
+apiVersion: mcm.ibm.com/v1alpha1
+kind: PlacementBinding
+metadata:
+  name: openshift-disconnected-binding
+placementRef:
+  name: openshift-disconnected-placement
+  kind: PlacementPolicy
+  apiGroup: mcm.ibm.com
+subjects:
+  - name: openshift-disconnected-policy
     kind: Policy
     apiGroup: policy.mcm.ibm.com
 ---

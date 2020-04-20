@@ -1,0 +1,22 @@
+apiVersion: policy.mcm.ibm.com/v1alpha1
+kind: Policy
+metadata:
+  name: openshift-disconnected-policy
+  annotations:
+    policy.mcm.ibm.com/standards: NIST
+    policy.mcm.ibm.com/categories: SystemAndInformationIntegrity, RBAC
+    policy.mcm.ibm.com/controls: MutationAdvisor
+spec:
+  remediationAction: "enforce" # enforce or inform
+  complianceType: "musthave" # used as default, when missing in a particular sub-template
+  namespaces:
+    include: ["default", "openshift-*"]
+    exclude: ["kube*"]
+  object-templates:
+    - objectDefinition:
+        apiVersion: config.openshift.io/v1
+        kind: OperatorHub
+        metadata:
+          name: cluster
+        spec:
+          disableAllDefaultSources: true

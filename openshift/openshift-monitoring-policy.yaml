@@ -1,8 +1,7 @@
 apiVersion: policy.mcm.ibm.com/v1alpha1
 kind: Policy
 metadata:
-  name: openshift2-policy
-  namespace: openshift-monitoring
+  name: openshift-monitoring-policy
   annotations:
     policy.mcm.ibm.com/standards: NIST
     policy.mcm.ibm.com/categories: SystemAndInformationIntegrity, RBAC
@@ -14,18 +13,7 @@ spec:
     include: ["default", "openshift-*"]
     exclude: ["kube*"]
   object-templates:
-    - complianceType: "musthave"
-      objectDefinition:
-        apiVersion: config.openshift.io/v1
-        kind: OperatorHub
-        metadata:
-          name: cluster
-          annotations:
-            user: arik
-        spec:
-          disableAllDefaultSources: false
-    - complianceType: "musthave"
-      objectDefinition:
+    - objectDefinition:
         apiVersion: v1
         data:
           config.yaml: |
