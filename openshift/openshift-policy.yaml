@@ -20,7 +20,7 @@ spec:
         kind: OperatorHub
         metadata:
           name: cluster
-          labels:
+          annotations:
             user: arik
         spec:
           disableAllDefaultSources: false
