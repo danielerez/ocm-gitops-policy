@@ -9,6 +9,20 @@ spec:
     matchLabels:
       team: "443"
 ---
+apiVersion: mcm.ibm.com/v1alpha1
+kind: PlacementBinding
+metadata:
+  name: openshift-binding
+  namespace: ec
+placementRef:
+  name: openshift-placement
+  kind: PlacementPolicy
+  apiGroup: mcm.ibm.com
+subjects:
+  - name: openshift2-policy
+    kind: Policy
+    apiGroup: policy.mcm.ibm.com
+---
 apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
