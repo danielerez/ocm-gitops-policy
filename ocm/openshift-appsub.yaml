@@ -4,8 +4,6 @@ kind: PlacementRule
 metadata:
   name: openshift-monitoring-placement
   namespace: open-cluster-management
-  labels:
-    dev: derez
 spec:
   clusterLabels:
     matchExpressions:
@@ -34,6 +32,7 @@ placementRef:
   apiGroup: mcm.ibm.com
 subjects:
   - name: openshift-disconnected-policy
+    namespace: open-cluster-management
     kind: Policy
     apiGroup: policy.mcm.ibm.com
 ---
