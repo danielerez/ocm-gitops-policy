@@ -1,14 +1,4 @@
 ---
-apiVersion: apps.open-cluster-management.io/v1
-kind: PlacementRule
-metadata:
-  name: openshift-monitoring-placement
-  namespace: open-cluster-management
-spec:
-  clusterLabels:
-    matchExpressions:
-      - {key: conf.open-cluster-management.io/monitoring, operator: Exists}
----
 apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementBinding
 metadata:
@@ -22,6 +12,16 @@ subjects:
   - name: openshift-monitoring-policy
     kind: Policy
     apiGroup: policy.mcm.ibm.com
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: openshift-monitoring-placement
+  namespace: open-cluster-management
+spec:
+  clusterLabels:
+    matchExpressions:
+      - {key: conf.open-cluster-management.io/monitoring, operator: Exists}
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
