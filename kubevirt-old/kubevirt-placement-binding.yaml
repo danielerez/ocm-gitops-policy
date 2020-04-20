@@ -1,0 +1,22 @@
+apiVersion: mcm.ibm.com/v1alpha1
+kind: PlacementBinding
+metadata:
+  name: binding
+  namespace: my-channel2
+placementRef:
+  name: placement
+  kind: PlacementPolicy
+  apiGroup: mcm.ibm.com
+subjects:
+  - name: policy
+    kind: Policy
+    apiGroup: policy.mcm.ibm.com
+  - name: openshift-policy
+    kind: Policy
+    apiGroup: policy.mcm.ibm.com
+  - name: kni-policy
+    kind: Policy
+    apiGroup: policy.mcm.ibm.com
+  - name: kni-cr-policy
+    kind: Policy
+    apiGroup: policy.mcm.ibm.com
