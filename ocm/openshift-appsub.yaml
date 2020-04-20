@@ -51,6 +51,6 @@ metadata:
     apps.open-cluster-management.io/github-path: openshift
     apps.open-cluster-management.io/github-branch: master
 spec:
-  channel: ec/ec-channel
+  channel: open-cluster-management/ec-channel
   placement:
     local: true
