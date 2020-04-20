@@ -2,11 +2,11 @@
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
-  name: kni-rule
+  name: cnf-placement
 spec:
   clusterLabels:
-    matchLabels:
-      team: "443"
+    matchExpressions:
+      - {key: conf.open-cluster-management.io/cnf, operator: Exists}
   clusterReplicas: 1
 ---
 apiVersion: apps.open-cluster-management.io/v1
@@ -21,7 +21,7 @@ spec:
   placement:
     placementRef:
       kind: PlacementRule
-      name: kni-rule
+      name: cnf-placement
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
@@ -35,4 +35,4 @@ spec:
   placement:
     placementRef:
       kind: PlacementRule
-      name: kni-rule
+      name: cnf-placement
