@@ -28,7 +28,7 @@ metadata:
   namespace: ec
 placementRef:
   name: openshift-disconnected-placement
-  kind: PlacementPolicy
+  kind: PlacementRule
   apiGroup: mcm.ibm.com
 subjects:
   - name: openshift-disconnected-policy
