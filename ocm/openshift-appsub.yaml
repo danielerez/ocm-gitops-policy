@@ -1,18 +1,4 @@
 ---
-apiVersion: mcm.ibm.com/v1alpha1
-kind: PlacementBinding
-metadata:
-  name: openshift-monitoring-binding
-  namespace: open-cluster-management
-placementRef:
-  name: openshift-monitoring-placement
-  kind: PlacementPolicy
-  apiGroup: mcm.ibm.com
-subjects:
-  - name: openshift-monitoring-policy
-    kind: Policy
-    apiGroup: policy.mcm.ibm.com
----
 apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
