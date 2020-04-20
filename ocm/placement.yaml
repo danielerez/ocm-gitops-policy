@@ -11,4 +11,5 @@ placementRef:
 subjects:
   - name: openshift-monitoring-policy
     kind: Policy
+    namespace: open-cluster-management
     apiGroup: policy.mcm.ibm.com
