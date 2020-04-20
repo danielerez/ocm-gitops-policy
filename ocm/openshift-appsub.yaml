@@ -18,6 +18,8 @@ kind: PlacementRule
 metadata:
   name: openshift-monitoring-placement
   namespace: open-cluster-management
+  labels:
+    dev: derez
 spec:
   clusterLabels:
     matchExpressions:
@@ -32,7 +34,8 @@ metadata:
 spec:
   clusterLabels:
     matchExpressions:
-      - {key: conf.open-cluster-management.io/disconnected, operator: Exists}
+      key: conf.open-cluster-management.io/disconnected
+      operator: Exists
 ---
 apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementBinding
