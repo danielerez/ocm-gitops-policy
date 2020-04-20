@@ -3,6 +3,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: openshift-monitoring-placement
+  namespace: open-cluster-management
 spec:
   clusterLabels:
     matchExpressions:
@@ -12,6 +13,7 @@ apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementBinding
 metadata:
   name: openshift-monitoring-binding
+  namespace: open-cluster-management
 placementRef:
   name: openshift-monitoring-placement
   kind: PlacementPolicy
@@ -25,6 +27,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: openshift-disconnected-placement
+  namespace: open-cluster-management
 spec:
   clusterLabels:
     matchExpressions:
@@ -34,6 +37,7 @@ apiVersion: mcm.ibm.com/v1alpha1
 kind: PlacementBinding
 metadata:
   name: openshift-disconnected-binding
+  namespace: open-cluster-management
 placementRef:
   name: openshift-disconnected-placement
   kind: PlacementPolicy
