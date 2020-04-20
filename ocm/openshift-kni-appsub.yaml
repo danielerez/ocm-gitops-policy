@@ -5,9 +5,8 @@ metadata:
   name: cnf-placement
 spec:
   clusterLabels:
-    matchExpressions:
-    - key: conf.open-cluster-management.io/cnf
-      operator: Exists
+    matchLabels:
+      conf.open-cluster-management.io/cnf: "yes"
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
