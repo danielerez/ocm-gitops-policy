@@ -31,7 +31,7 @@ metadata:
     apps.open-cluster-management.io/github-path: cnf/performance
     apps.open-cluster-management.io/github-branch: master
 spec:
-  channel: ec/ec-channel
+  channel: open-cluster-management/ec-channel
   placement:
     placementRef:
       kind: PlacementRule
