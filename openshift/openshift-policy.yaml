@@ -20,6 +20,8 @@ spec:
         kind: OperatorHub
         metadata:
           name: cluster
+          labels:
+            user: arik
         spec:
           disableAllDefaultSources: false
     - complianceType: "musthave"
