@@ -5,7 +5,7 @@ metadata:
   name: openshift-monitoring-placement
   namespace: ec
 spec:
-  clusterLabels:
+  clusterSelector:
     matchLabels:
       conf.open-cluster-management.io/monitoring: "yes"
 ---
@@ -15,7 +15,7 @@ metadata:
   name: openshift-disconnected-placement
   namespace: ec
 spec:
-  clusterLabels:
+  clusterSelector:
     matchLabels:
       conf.open-cluster-management.io/disconnected: "yes"
 ---
