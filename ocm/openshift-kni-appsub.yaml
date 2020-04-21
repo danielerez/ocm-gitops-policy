@@ -4,7 +4,7 @@ kind: PlacementRule
 metadata:
   name: cnf-placement
 spec:
-  clusterLabels:
+  clusterSelector:
     matchLabels:
       conf.open-cluster-management.io/cnf: "yes"
 ---
