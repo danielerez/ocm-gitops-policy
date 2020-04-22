@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ec
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Channel
+metadata:
+  name: ec-channel
+  namespace: ec
+spec:
+  type: GitHub
+  pathname: https://github.com/danielerez/ocm-gitops-policy.git
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: Subscription
+metadata:
+  name: ec-appsub
+  namespace: ec
+  annotations:
+    apps.open-cluster-management.io/github-path: ocm
+    apps.open-cluster-management.io/github-branch: master
+spec:
+  channel: ec/ec-channel
+  placement:
+    local: true
