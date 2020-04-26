@@ -6,3 +6,5 @@ metadata:
   namespace: kubevirt
 spec:
   imagePullPolicy: IfNotPresent
+  
+  
