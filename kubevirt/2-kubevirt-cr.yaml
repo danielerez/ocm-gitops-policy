@@ -2,7 +2,7 @@
 apiVersion: kubevirt.io/v1alpha3
 kind: KubeVirt
 metadata:
-  name: kubevirt2
+  name: kubevirt
   namespace: kubevirt
 spec:
   imagePullPolicy: IfNotPresent
